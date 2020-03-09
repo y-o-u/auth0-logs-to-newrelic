@@ -5,14 +5,14 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/auth0-extensions/auth0-logs-to-newrelic.git"
+    "url": "git+https://github.com/y-o-u/auth0-logs-to-newrelic.git"
   },
-  "author": "auth0",
+  "author": "y-o-u",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/auth0-extensions/auth0-logs-to-newrelic.git/issues"
+    "url": "https://github.com/y-o-u/auth0-logs-to-newrelic.git/issues"
   },
-  "homepage": "https://github.com/auth0-extensions/auth0-logs-to-newrelic.git#readme",
+  "homepage": "https://github.com/y-o-u/auth0-logs-to-newrelic.git#readme",
   "scripts": {
     "build": "npm run clean && npm run client:build && npm run extension:build",
     "clean": "rimraf dist",
