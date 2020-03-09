@@ -20,7 +20,7 @@ module.exports = () => {
     <link rel="stylesheet" type="text/css" href="https://cdn.auth0.com/manage/v0.3.1672/css/index.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.auth0.com/styleguide/4.6.13/index.min.css" />
     <% if (assets.style) { %><link rel="stylesheet" type="text/css" href="/app/<%= assets.style %>" /><% } %>
-    <% if (assets.useCdn) { %><link rel="stylesheet" type="text/css" href="//cdn.auth0.com/extensions/auth0-logs-to-provider/assets/auth0-logs-to-provider.ui.css" /><% } %>
+    <% if (assets.useCdn) { %><link rel="stylesheet" type="text/css" href="//cdn.auth0.com/extensions/auth0-logs-to-newrelic/assets/auth0-logs-to-newrelic.ui.<%= assets.version %>.css" /><% } %>
     <% if (assets.customCss) { %><link rel="stylesheet" type="text/css" href="<%= assets.customCss %>" /><% } %>
   </head>
   <body>
@@ -31,8 +31,8 @@ module.exports = () => {
     <% if (assets.vendors) { %><script type="text/javascript" src="/app/<%= assets.vendors %>"></script><% } %>
     <% if (assets.app) { %><script type="text/javascript" src="<%= assets.app %>"></script><% } %>
     <% if (assets.useCdn) { %>
-    <script type="text/javascript" src="//cdn.auth0.com/extensions/auth0-logs-to-provider/assets/auth0-logs-to-provider.ui.vendors.js"></script>
-    <script type="text/javascript" src="//cdn.auth0.com/extensions/auth0-logs-to-provider/assets/auth0-logs-to-provider.ui.js"></script>
+    <script type="text/javascript" src="//cdn.auth0.com/extensions/auth0-logs-to-newrelic/assets/auth0-logs-to-newrelic.ui.vendors.<%= assets.version %>.js"></script>
+    <script type="text/javascript" src="//cdn.auth0.com/extensions/auth0-logs-to-newrelic-/assets/auth0-logs-to-newrelic.ui.<%= assets.version %>.js"></script>
     <% } %>
   </body>
   </html>

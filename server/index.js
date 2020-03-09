@@ -41,13 +41,13 @@ module.exports = (configProvider, storageProvider) => {
   // Configure routes.
   app.use(expressTools.routes.dashboardAdmins({
     secret: config('EXTENSION_SECRET'),
-    audience: 'urn:logs-to-provider',
+    audience: 'urn:logs-to-newrelic',
     rta: config('AUTH0_RTA').replace('https://', ''),
     domain: config('AUTH0_DOMAIN'),
     baseUrl: config('PUBLIC_WT_URL') || config('WT_URL'),
-    clientName: 'Logs to Any Provider',
+    clientName: 'Logs to New Relic',
     urlPrefix: '',
-    sessionStorageKey: 'logs-to-provider:apiToken'
+    sessionStorageKey: 'logs-to-newrelic:apiToken'
   }));
   app.use('/meta', meta());
   app.use('/.extensions', hooks());
