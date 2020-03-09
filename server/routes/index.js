@@ -10,12 +10,18 @@ module.exports = (storage) => {
   const authenticateAdmins = middlewares.authenticateAdmins({
     credentialsRequired: true,
     secret: config('EXTENSION_SECRET'),
-    audience: 'urn:logs-to-provider',
+    audience: 'urn:logs-to-newrelic',
     baseUrl: config('PUBLIC_WT_URL') || config('WT_URL'),
     onLoginSuccess: (req, res, next) => next()
   });
 
-  app.get('/', htmlRoute());
+  const managementApi = middlewares.managementApiClient({
+    domain: config('AUTH0_DOMAIN'),
+    clientId: config('AUTH0_CLIENT_ID'),
+    clientSecret: config('AUTH0_CLIENT_SECRET'),
+  });
+
+  app.get('/', managementApi, htmlRoute());
 
   app.get('/api/report', authenticateAdmins, (req, res, next) =>
     storage.read()
