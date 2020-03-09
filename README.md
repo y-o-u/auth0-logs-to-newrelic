@@ -1,4 +1,10 @@
-# Auth0 - Logs to Any Provider
+# Auth0 - Logs to New Relic
+
+This extension will take all of your Auth0 logs and export them to New Relic.
+
+## New Relic Logs : Introduction to the Log API
+
+https://docs.newrelic.com/docs/logs/new-relic-logs/log-api/introduction-log-api
 
 ## Filters
 
